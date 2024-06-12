@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Completo</title>
+    <link rel="stylesheet" href="val.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Formulario Completo</h1>
+        <form id="miFormulario">
+            <!-- Campo de Texto -->
+            <div class="form-group">
+                <label for="texto">Texto:</label>
+								<!--podriamos agregar estos elementos y tener una validacion completa minlength="2" maxlength="10" required, probar agregando y personalizando -->
+                <input type="text" id="texto" name="texto" minlength="2" maxlength="10" required>
+                <span class="error" id="textoError"></span>
+            </div>
+            
+            <!-- Campo de Contraseña -->
+            <div class="form-group">
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" >
+                <span class="error" id="passwordError"></span>
+            </div>
+						
+						 <!-- Campo de DNI -->
+						 <div class="form-group">
+							<label for="dni">DNI:</label>
+							<input type="text" id="dni" name="dni" pattern="^\d{8}$" >
+							<span class="error" id="dniError"></span>
+						</div>
+						
+						<!-- Campo de Teléfono -->
+						<div class="form-group">
+								<label for="telefono">Teléfono:</label>
+								<input type="tel" id="telefono" name="telefono" pattern="^\d{9}$" >
+								<span class="error" id="telefonoError"></span>
+						</div>
+
+            <!-- Campo de Correo Electrónico -->
+            <div class="form-group">
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" >
+                <span class="error" id="emailError"></span>
+            </div>
+
+            <!-- Campo de Fecha -->
+            <div class="form-group">
+                <label for="fecha">Fecha:</label>
+                <input type="date" id="fecha" name="fecha" >
+                <span class="error" id="fechaError"></span>
+            </div>
+
+            <!-- Campo de URL -->
+            <div class="form-group">
+                <label for="url">URL:</label>
+                <input type="url" id="url" name="url" >
+                <span class="error" id="urlError"></span>
+            </div>
+
+            <!-- Campo de Archivo -->
+            <div class="form-group">
+                <label for="archivo">Archivo:</label>
+                <input type="file" id="archivo" name="archivo" >
+                <span class="error" id="archivoError"></span>
+            </div>
+
+
+            <!-- Campo de Casilla de Verificación -->
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="terminos" name="terminos" > Acepto los términos
+                </label>
+                <span class="error" id="terminosError"></span>
+            </div>
+
+            <!-- Campo de Radio Button -->
+            <div class="form-group">
+                <label>Género:</label>
+                <label><input type="radio" id="generoM" name="genero" value="masculino" > Masculino</label>
+                <label><input type="radio" id="generoF" name="genero" value="femenino" > Femenino</label>
+                <span class="error" id="generoError"></span>
+            </div>
+
+            <!-- Campo de Lista de Selección -->
+            <div class="form-group">
+                <label for="ciudad">Ciudad:</label>
+                <select id="ciudad" name="ciudad" >
+                    <option value="">Seleccione una ciudad</option>
+                    <option value="lima">Lima</option>
+                    <option value="cusco">Cusco</option>
+                    <option value="arequipa">Arequipa</option>
+                </select>
+                <span class="error" id="ciudadError"></span>
+            </div>
+
+            <!-- Campo de Textarea -->
+            <div class="form-group">
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" ></textarea>
+                <span class="error" id="mensajeError"></span>
+            </div>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+    <script src="val.js"></script>
+</body>
+</html>
